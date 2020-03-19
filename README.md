@@ -15,3 +15,6 @@ This is work in progress. Currently, the following functions are implemented.
   [Condat (2013) A Direct Algorithm for 1-D Total Variation Denoising](https://doi.org/10.1109/LSP.2013.2278339).
   An inplace version `total_variation_denoising!(dest::AbstractVector, source::AbstractVector, λ::Number)`
   is also provided.
+- `group_sparse_total_variation_denoising(y::AbstractVector, λ::Number; group_size::Integer=1, max_iter::Integer=100)`
+  Compute `max_iter` iterations of the algorithm described by
+  [Selesnick and Chen (2013) Total variation denoising with overlapping group sparsity](https://doi.org/10.1109/ICASSP.2013.6638755).

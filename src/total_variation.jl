@@ -113,13 +113,9 @@ end
 
 
 """
-    group_sparse_total_variation_denoising(y::AbstractVector, λ::Number, group_size::Integer=1)
+    group_sparse_total_variation_denoising(y::AbstractVector, λ::Number; group_size::Integer=1, max_iter::Integer=100)
 
-Compute the solution of the group sparse total variation regularized least square problem
-```math
-    \\min_x \\frac{1}{2} \\sum_{k} |y_k - x_k|^2 + \\lambda \\sum_{k} |x_{k+1} - x_{k}|
-```
-using the iterative algorithm of
+Compute `max_iter` iterations of the algorithm described by
 Selesnick and Chen (2013) Total variation denoising with overlapping group sparsity,
 doi: 10.1109/ICASSP.2013.6638755.
 """

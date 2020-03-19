@@ -1,6 +1,2 @@
-using Postprocessing
-using Test
 
-@testset "Postprocessing.jl" begin
-    # Write your own tests here.
-end
+@time include("total_variation_test.jl")

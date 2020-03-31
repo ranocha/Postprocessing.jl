@@ -3,6 +3,8 @@ using Test
 using LinearAlgebra, Random
 
 @testset "total variation denoising" begin
+  println(devnull, reference(total_variation_denoising))
+
   for T in (Float32, Float64)
     x = range(zero(T), 2*one(T), length=1000)
     y_true = sinpi.(x)
@@ -15,6 +17,8 @@ using LinearAlgebra, Random
 end
 
 @testset "group sparse total variation denoising" begin
+  println(devnull, reference(group_sparse_total_variation_denoising))
+
   for T in (Float32, Float64)
     x = range(zero(T), 2*one(T), length=1000)
     y_true = sinpi.(x)

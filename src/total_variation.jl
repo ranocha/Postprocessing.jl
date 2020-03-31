@@ -130,6 +130,23 @@ function total_variation_denoising!(dest::AbstractVector, source::AbstractVector
   dest
 end
 
+function reference(::Union{typeof(total_variation_denoising),
+                           typeof(total_variation_denoising!)})
+"""
+@article{condat2013direct,
+  title={A direct algorithm for 1-{D} total variation denoising},
+  author={Condat, Laurent},
+  journal={IEEE Signal Processing Letters},
+  volume={20},
+  number={11},
+  pages={1054--1057},
+  year={2013},
+  publisher={IEEE},
+  doi={10.1109/LSP.2013.2278339}
+}
+"""
+end
+
 
 
 """
@@ -208,4 +225,20 @@ function group_sparse_total_variation_denoising!(dest::AbstractVector, source::A
   end
 
   dest
+end
+
+function reference(::Union{typeof(group_sparse_total_variation_denoising),
+                           typeof(group_sparse_total_variation_denoising!)})
+"""
+@inproceedings{selesnick2013total,
+  title={Total variation denoising with overlapping group sparsity},
+  author={Selesnick, Ivan W and Chen, Po-Yu},
+  booktitle={2013 IEEE International Conference on Acoustics,
+             Speech and Signal Processing},
+  pages={5696--5700},
+  year={2013},
+  organization={IEEE},
+  doi={10.1109/ICASSP.2013.6638755}
+}
+"""
 end

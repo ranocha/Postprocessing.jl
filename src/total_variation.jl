@@ -1,4 +1,24 @@
 """
+    total_variation(u)
+
+Compute the discrete total variation
+```math
+    \\sum_{k} |u_{k+1} - u_{k}|.
+```
+"""
+function total_variation(u)
+  uprev = first(u)
+  res = zero(uprev)
+  @inbounds @simd for i in eachindex(u)[2:end]
+    unext = u[i]
+    res += abs(uprev - unext)
+    uprev = unext
+  end
+  res
+end
+
+
+"""
     total_variation_denoising(y::AbstractVector, λ::Number)
 
 Compute the solution of the total variation regularized least square problem

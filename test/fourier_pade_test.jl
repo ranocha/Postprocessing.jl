@@ -3,6 +3,8 @@ using Test
 using LinearAlgebra, DelimitedFiles
 
 @testset "Fourier Padé reconstruction" begin
+  println(devnull, reference(fourier_pade))
+
   for T in (Float32, Float64)
     data = readdlm(joinpath(@__DIR__, "test_u_piecewise_constant.txt"), comments=true)
     x = T.(data[:, 1])

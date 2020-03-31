@@ -48,3 +48,19 @@ function fourier_pade(x, u, degree_num, degree_den)
 
   real.(evalpoly.(x_p, Ref(num_p)) ./ evalpoly.(x_p, Ref(den_p)) .+ evalpoly.(x_m, Ref(num_m)) ./ evalpoly.(x_m, Ref(den_m)))
 end
+
+function reference(::typeof(fourier_pade))
+"""
+@article{driscoll2001pade,
+  title={A {P}ad{\'e}-based algorithm for overcoming the {G}ibbs phenomenon},
+  author={Driscoll, Tobin A and Fornberg, Bengt},
+  journal={Numerical Algorithms},
+  volume={26},
+  number={1},
+  pages={77--92},
+  year={2001},
+  publisher={Springer},
+  doi={10.1023/A:1016648530648}
+}
+"""
+end

@@ -2,7 +2,9 @@
     fourier_pade(x, u, degree_num, degree_den)
 
 Compute the Fourier-Padé reconstruction of `u` with degrees
-`(degree_num, degree_den)` and evaluate it at the points `x`.
+`(degree_num, degree_den)` and evaluate it at the points `x`, cf.
+Driscoll and Fornberg (2001) A Padé-based algorithm for overcoming the Gibbs phenomenon,
+doi: 10.1023/A:1016648530648.
 """
 function fourier_pade(x, u, degree_num, degree_den)
   N0 = length(u)

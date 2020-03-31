@@ -18,3 +18,7 @@ This is work in progress. Currently, the following functions are implemented.
 - `group_sparse_total_variation_denoising(y::AbstractVector, λ::Number; group_size::Integer=1, max_iter::Integer=100)`
   Compute `max_iter` iterations of the algorithm described by
   [Selesnick and Chen (2013) Total variation denoising with overlapping group sparsity](https://doi.org/10.1109/ICASSP.2013.6638755).
+- `fourier_pade(x, u, degree_num, degree_den)`
+  Compute the Fourier-Padé reconstruction of `u` with degrees
+  `(degree_num, degree_den)` and evaluate it at the points `x`,
+  cf. [Driscoll and Fornberg (2001) A Padé-based algorithm for overcoming the Gibbs phenomenon](https://doi.org/10.1023/A:1016648530648).

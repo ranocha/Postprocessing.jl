@@ -21,6 +21,7 @@ end
     y_noisy = y_true .+ 0.1 .* randn(T, length(x))
     y_denoised = group_sparse_total_variation_denoising(y_noisy, 1, group_size=3)
     @test norm(y_denoised - y_true) < norm(y_noisy - y_true)
+    @test total_variation(y_denoised) < total_variation(y_noisy)
     @test_throws ArgumentError group_sparse_total_variation_denoising(y_noisy, -1, group_size=3)
     @test_throws DimensionMismatch group_sparse_total_variation_denoising!(similar(y_noisy, T, length(y_noisy)-1), y_noisy, 1)
   end

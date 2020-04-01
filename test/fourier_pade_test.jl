@@ -11,21 +11,19 @@ using LinearAlgebra, DelimitedFiles
     u = T.(data[:, 2])
     u_true = @. ifelse(abs(x - 0.6) < 0.2, one(T), zero(T))
 
-    u_reconstructed = fourier_pade(x, u, 50, 50)
+    u_reconstructed = fourier_pade(u, 50, 50)
     @test norm(u_reconstructed - u_true) < norm(u - u_true)
     @test total_variation(u_reconstructed) < total_variation(u)
 
-    u_reconstructed = fourier_pade(x, u, 50, 45)
+    u_reconstructed = fourier_pade(u, 50, 45)
     @test norm(u_reconstructed - u_true) < norm(u - u_true)
     @test total_variation(u_reconstructed) < total_variation(u)
 
     # this choice of the degrees leads to increased oscillations
     # near the discontinuity but should still be computable
-    u_reconstructed = fourier_pade(x, u, 50, 52)
-
-    @test_throws ArgumentError fourier_pade(x, u[1:end-1], 50, 50)
+    u_reconstructed = fourier_pade(u, 50, 52)
 
     N = length(u)
-    @test_throws ArgumentError fourier_pade(x, u[1:end-1], N-(N÷2)+1, N÷2)
+    @test_throws ArgumentError fourier_pade(u[1:end-1], N-(N÷2)+1, N÷2)
   end
 end

@@ -4,7 +4,7 @@
 [![Codecov](https://codecov.io/gh/ranocha/Postprocessing.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/ranocha/Postprocessing.jl)
 [![Coveralls](https://coveralls.io/repos/github/ranocha/Postprocessing.jl/badge.svg?branch=master)](https://coveralls.io/github/ranocha/Postprocessing.jl?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
-[![GitHub commits since tagged version](https://img.shields.io/github/commits-since/ranocha/Postprocessing.jl/v0.1.0.svg?style=social&logo=github)](https://github.com/ranocha/Postprocessing.jl)
+[![GitHub commits since tagged version](https://img.shields.io/github/commits-since/ranocha/Postprocessing.jl/v0.1.1.svg?style=social&logo=github)](https://github.com/ranocha/Postprocessing.jl)
 <!-- [![Build Status](https://ci.appveyor.com/api/projects/status/github/ranocha/Postprocessing.jl?svg=true)](https://ci.appveyor.com/project/ranocha/Postprocessing-jl)
 [![PkgEval](https://juliaci.github.io/NanosoldierReports/pkgeval_badges/P/Postprocessing.svg)](https://juliaci.github.io/NanosoldierReports/pkgeval_badges/report.html) -->
 
